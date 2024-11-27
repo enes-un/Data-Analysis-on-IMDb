@@ -1,4 +1,4 @@
-Data-Analysis-on-IMDb-and-TV-Series
+Data-Analysis-on-IMDb
 
   This project is created for the course project of Introduction to Data Science at Sabancı University (2024-2025).
   The analysis explores my viewing habits for both movies and TV series using data from my IMDb activity and metadata retrieved from the IMDb database.
