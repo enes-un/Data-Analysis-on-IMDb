@@ -27,11 +27,11 @@ The motivation behind this project is to better understand my viewing patterns, 
 ## Data Source
 
 ### Personal IMDb Data
-Exported from my IMDb account, including:
+Exporting from my IMDb account, including:
 - Movie ratings and watchlist.  
 - TV series ratings.  
 
 ### IMDb Metadata
-Retrieved using the IMDbPY package, including:
+Retrieving using the IMDbPY package, including:
 - Genres, IMDb ratings, runtime, and release years for both movies and TV series.  
 - Cast and directors for both movies and series.  
