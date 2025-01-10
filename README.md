@@ -1,4 +1,4 @@
-# Data-Analysis-on-IMDb
+c# Data-Analysis-on-IMDb
 
 This project is created for the course project of *Introduction to Data Science* at Sabancı University (2024-2025).  
 The analysis explores my viewing habits for both movies and TV series using data from my IMDb activity and metadata retrieved from the IMDb database.  
@@ -14,7 +14,8 @@ The aim is to uncover patterns in my preferences, compare my ratings with IMDb u
    - [IMDb Metadata](#imdb-metadata)  
 4. [Data Analysis](#data-analysis)  
 5. [Findings](#findings)  
-6. [Limitations and Future Work](#limitations-and-future-work)  
+6. [Limitations](#limitations)
+7. [Future Work](#future-work) 
 
 ---
 
@@ -85,93 +86,126 @@ Through this analysis, I discovered the following about my viewing habits. Where
 - **Observation**: My most-watched genres are Drama and Comedy, while my favorite genres (highest average ratings) are Sci-Fi and Mystery.
 - **Analysis**:
   - **Total watched for each genre**:
-    - Drama: 50
-    - Comedy: 35
-    - Sci-Fi: 15
-    - Mystery: 12
+    - Drama: 118
+    - Comedy: 69
+    - Sci-Fi: 65
+    - Action: 62
+![Q1.1.png](figures/Q1.1.png)
   - **Average user rating for each genre**:
-    - Sci-Fi: 8.2
-    - Mystery: 7.9
-    - Drama: 7.2
-    - Comedy: 6.8
-- **Conclusion**: While Drama and Comedy dominate in terms of frequency, Sci-Fi and Mystery are rated higher, suggesting a qualitative preference for these genres.
+    - Action: 6.4
+    - Sci-Fi: 6.2
+    - Mystery: 6.1
+    - Drama: 6.0
+![Q1.3.png](figures/Q1.3.png)
+- **Conclusion**: While Drama and Comedy dominate in terms of frequency, Sci-Fi and Action are rated higher, suggesting a qualitative preference for these genres. Genres like biography, documentary and musical were not taken into account since I have only limited amount of information on them.
+![Q1.2.png](figures/Q1.2.png)
 
 ### 2. Rating Alignment with IMDb
-- **Observation**: My ratings have a moderate positive correlation with IMDb ratings.
+- **Observation**: The relationship between user ratings and IMDb ratings shows a weak to moderate positive correlation, with considerable scatter.
 - **Analysis**:
-  - **Correlation Coefficient**:
-    - \( r = 0.65 \), calculated using Pearson's correlation formula.
-  - **Hypothesis Testing**:
-    - Null Hypothesis (\( H_0 \)): No correlation between my ratings and IMDb ratings (\( r = 0 \)).
-    - P-value: 0.001 (significant at the 0.05 level, rejecting \( H_0 \)).
-  - **Visualization**: Scatter plot shows a clear positive trend between my ratings and IMDb ratings.
-- **Conclusion**: My ratings align well with IMDb’s, although I tend to rate niche genres slightly higher.
+  - **Distribution Pattern**:
+    - User ratings are widely dispersed across all IMDb rating levels
+    - There's significant vertical spread at each IMDb rating point, showing high variability
+    - Many films with high IMDb ratings (8-9) receive diverse user ratings ranging from 2 to 10
+  ![Q2.1.png](figures/Q2.1.png)
+  - **Rating Patterns**:
+    - The histogram shows user ratings peak around 6-7
+    - There's a right-skewed distribution of user ratings
+    - User ratings appear more generous at the higher end (8-10)
+  ![Q2.2.png](figures/Q2.2.png)
+  - **Notable Differences**:
+    - Even movies with low IMDb ratings (3-4) sometimes receive high user scores (8-10)
+    - Conversely, some films with high IMDb ratings (8-9) receive very low user scores (2-4)
+- **Conclusion**: While there's some positive correlation between user and IMDb ratings, the relationship is weak. The data suggests highly independent rating behavior, with user ratings often diverging significantly from IMDb ratings.
 
 ### 3. Favorite Directors and Actors
-- **Observation**: My top-rated directors and actors appear frequently in my viewing history.
-- **Analysis**:
-  - **Directors in my top-rated content** (\( \text{user rating} \geq 8 \)):
-    - Christopher Nolan: 5 movies (average rating = 8.6).
-    - Bong Joon Ho: 3 movies (average rating = 8.8).
-  - **Actors in my top-rated content**:
-    - Leonardo DiCaprio: 4 movies (average rating = 8.5).
-    - Emma Stone: 3 movies (average rating = 8.4).
-  - **Chi-Square Test for Frequency**:
-    - Null Hypothesis (\( H_0 \)): Directors/actors in top-rated content are not over-represented.
-    - P-value: < 0.01 (rejecting \( H_0 \), confirming over-representation).
-- **Conclusion**: Directors and actors in my top-rated content are statistically more frequent in my viewing history.
+- **Observation**: The data shows a mix of international and Turkish figures among the most-watched directors and actors.
+#### Analysis of Most-Watched Directors:
+- **Christopher Nolan** leads with 4 movies watched.
+- **James Cameron** follows with 3 movies.
+- Several directors, including **Chris Columbus**, **Ertem Eğilmez**, and **Orhan Aksoy**, are tied with 2 movies each.
+- Notable representation of Turkish directors, such as **Ertem Eğilmez**, **Orhan Aksoy**, **Kıvanç Baruönü**, and **Cem Yılmaz**.
+![Q3.2.png](figures/Q3.2.png)
+#### Analysis of Most-Watched Actors:
+- **Cem Yılmaz** tops the list with 5 movies.
+- Several actors, including **Serenay Sarıkaya**, **Zendaya**, **Ozan Güven**, **Timothée Chalamet**, and **Mark Ruffalo**, appear in 4 movies each.
+- **Şafak Sezer**, **Carla Gugino**, **Adile Naşit**, and **Şener Şen** are tied with 3 movies each.
+- Strong representation of Turkish actors alongside international stars.
+![Q3.1.png](figures/Q3.1.png)
+#### Conclusion:
+- The viewing history demonstrates a balanced mix of Turkish and international cinema.
+- There is significant engagement with both mainstream Hollywood productions and Turkish cinema.
+- The frequency distribution is relatively tight, ranging from 2-5 movies per person.
+- Contemporary actors and directors dominate the viewing preferences.
 
-### 4. Common Properties of Likes and Dislikes
-- **Observation**: My likes (\( \text{user rating} \geq 7 \)) and dislikes (\( \text{user rating} \leq 4 \)) are influenced by specific genres and release years.
-- **Analysis**:
-  - **Genres in Likes**:
-    - Sci-Fi: 30%
-    - Drama: 25%
-    - Mystery: 20%
-  - **Genres in Dislikes**:
-    - Comedy: 40%
-    - Romance: 30%
-    - Action: 20%
-  - **Average release year**:
-    - Likes: 2015
-    - Dislikes: 2010
-  - **Hypothesis Testing**:
-    - Null Hypothesis (\( H_0 \)): No significant difference between genres in likes and dislikes.
-    - Chi-Square Test P-value: 0.02 (rejecting \( H_0 \)).
-- **Conclusion**: Likes are skewed towards recent Sci-Fi and Mystery titles, while dislikes cluster around older Comedy and Romance content.
+### 4. Common Properties of Ratings and Correlations
+- **Observation**: The data reveals interesting patterns across ratings, years, and runtimes.
+#### Analysis of Correlations:
+- **User vs. IMDb Ratings**:
+  - Weak positive correlation (\( r = 0.11 \)).
+  - Indicates largely independent rating behavior.
+- **Release Year Impact**:
+  - Slight negative correlation with ratings (\( r = -0.029 \) for user ratings, \( r = -0.087 \) for IMDb ratings).
+  - Modern films (2000-2020) dominate the highest ratings.
+  - Average rating trends show high variability, especially during the 1980s-1990s.
+- **Runtime Patterns**:
+  - Weak correlation with user ratings (\( r = 0.074 \)) and IMDb ratings (\( r = -0.099 \)).
+  - Most-watched films cluster between 90-150 minutes.
+  - Distribution shows two peaks, suggesting preferences for both standard (~100 min) and longer (~150 min) runtimes.
+ ![Q4.2.png](figures/Q4.2.png) ![Q4.1.png](figures/Q4.1.png)
+- **Rating Distribution Characteristics**:
+  - User ratings form a bell curve peaking around 6-7.
+  - Most movies are rated between 5-8, with few extreme ratings (1-2 or 9-10).
+  - Year distribution is heavily skewed towards post-2000 films.
+  ![Q4.3.png](figures/Q4.3.png)
+#### Conclusion:
+- Ratings are largely independent of conventional metrics like runtime, release year, or IMDb consensus.
+- Viewing habits focus on contemporary cinema (post-2000).
+- Rating behavior is consistent across film age and length, with average ratings remaining stable over time despite minor fluctuations.
 
 ### 5. Movies vs. TV Series Preferences
-- **Observation**: My preferences vary significantly between movies and TV series in terms of genres and runtime.
-- **Analysis**:
-  - **Average runtime**:
-    - Movies: 115 mins
-    - TV Series: 45 mins per episode
-  - **Most-watched genres**:
-    - Movies: Sci-Fi, Action
-    - TV Series: Drama, Mystery
-  - **T-Test for Runtime**:
-    - Null Hypothesis (\( H_0 \)): No significant difference in runtime between movies and TV series.
-    - P-value: < 0.001 (rejecting \( H_0 \), confirming a significant difference).
-- **Conclusion**: I prefer longer runtimes for movies and shorter, episodic content for TV series. Genre preferences also vary significantly.
+#### Analysis of Genre Distribution:
+- **Most Popular Genres in Movies**:
+  - **Drama** (~38 titles).
+  - **Action** and **Thriller** (both ~33 titles).
+  - **Adventure** and **Comedy** (~30 titles each).
+  - **Sci-Fi** (~30 titles).
+- **Most Popular Genres in TV Series**:
+  - **Drama** (dominates with ~80 titles).
+  - **Comedy** (~37 titles).
+  - **Romance** and **Mystery** (~30 titles each).
+  - **Fantasy** (~25 titles).
+#### Notable Genre Disparities:
+- **TV-Dominated Genres**:
+  - **Drama** shows the largest gap, with twice as many TV series as movies.
+  - **Romance** and **Mystery** are clearly preferred in the TV format.
+  - Family-oriented content appears more frequently in TV series.
+- **Movie-Dominated Genres**:
+  - **Action** is more represented in movies.
+  - **Thrillers** show a strong preference for the movie format.
+  - **Sci-Fi** slightly favors movies over TV series.
+  ![Q5.png](figures/Q5.png)
+#### Conclusion:
+- **Drama** overwhelmingly dominates TV series preferences.
+- Movies have a more balanced distribution across genres.
+- Clear format preferences are evident:
+  - **Action** and **Thrillers** are preferred in movies.
+  - **Romance** and **Mystery** are preferred in TV series.
+- Certain genres, such as **War** and **Documentary**, show minimal representation in both formats.
 
 ---
 
-## Limitations and Future Work
-
 ### Limitations
-1. **Data Gaps**: Missing metadata (e.g., runtimes) affected some analyses.  
+1. **Data Gaps**: Missing metadata (e.g., runtimes) affected some analyses. Also, I had limited samples for some certain categories. 
 2. **Subjectivity**: My ratings and preferences are subjective and may not generalize.  
 3. **Limited Scope**: Focused solely on IMDb activity, excluding other platforms.
 
+---
+
 ### Future Work
-1. **Cross-Platform Analysis**: Incorporate data from Netflix, Letterboxd, etc.  
-2. **Temporal Trends**: Analyze how preferences evolve over time.  
-3. **Predictive Modeling**: Use machine learning to predict ratings for new content.  
-4. **Enhanced Metadata**: Include critic reviews, box office data, etc.
+1. **Cross-Platform Analysis**: I can incorporate data from Netflix, Letterboxd, etc.  
+2. **Temporal Trends**: Analyzing how preferences evolve over time would be beneficial.  
+3. **Enhanced Metadata**: Including critic reviews, box office data, etc. and extending my own experience would help to decide on better conclusions.
 
 ---
 
-### Final Tips for GitHub
-- Save this content in a `README.md` file. 
-- Use **Preview** in GitHub to verify formatting.
-- Let me know if you'd like further adjustments!
