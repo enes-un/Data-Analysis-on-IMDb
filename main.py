@@ -9,7 +9,7 @@ from advanced_eda import eda_and_analysis
 def main():
     try:
         # Step 1: Read IMDb ratings from CSV
-        file_path = 'mylist.csv'  # Adjust the path as needed
+        file_path = 'mylist.csv'
         print("Reading IMDb ratings from CSV...")
         ratings_df = read_imdb_csv(file_path)
         print("CSV reading completed.")
