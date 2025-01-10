@@ -29,9 +29,13 @@ The motivation behind this project is to better understand my viewing patterns, 
 ### Personal IMDb Data
 Exporting from my IMDb account, including:
 - Movie ratings and watchlist.  
-- TV series ratings.  
+- TV series ratings.
+I exported my Ratings Lists from my account on IMDb website by using the provided interface of the IMDb. The data base that shows my preferences of movies and TV series, the file named "mylist.csv", is used in order to gather the movies' titles, my rating points and the IMDb IDs which are utilized to retrieve the related data from the IMDb Metadata. (scraper.py)
 
 ### IMDb Metadata
 Retrieving using the IMDbPY package, including:
 - Genres, IMDb ratings, runtime, and release years for both movies and TV series.  
-- Cast and directors for both movies and series.  
+- Cast and directors for both movies and series.
+After obtaining the IMDb IDs of my movies and TV series, I used them to gather the related information such as year, genre, actors, director etc. from the IMDb metadata by importing it on Python. (fetcher.py)
+
+
