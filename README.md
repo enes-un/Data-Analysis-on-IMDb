@@ -83,7 +83,7 @@ The analysis process involved multiple stages and techniques:
 Through this analysis, I discovered the following about my viewing habits. Where applicable, mathematical calculations and statistical evidence have been included to support the findings.
 
 ### 1. Most-Watched vs. Favorite Genres
-- **Observation**: My most-watched genres are Drama and Comedy, while my favorite genres (highest average ratings) are Sci-Fi and Mystery.
+- **Observation**: My most-watched genres are Drama and Comedy, while my favorite genres (highest average ratings) are Sci-Fi and Action.
 - **Analysis**:
   - **Total watched for each genre**:
     - Drama: 118
@@ -109,14 +109,14 @@ Through this analysis, I discovered the following about my viewing habits. Where
     - Many films with high IMDb ratings (8-9) receive diverse user ratings ranging from 2 to 10
   ![Q2.1.png](figures/Q2.1.png)
   - **Rating Patterns**:
-    - The histogram shows user ratings peak around 6-7
-    - There's a right-skewed distribution of user ratings
-    - User ratings appear more generous at the higher end (8-10)
+    - The histogram shows my ratings peak around 6-7
+    - There's a right-skewed distribution of my ratings
+    - My ratings appear more generous at the higher end (8-10)
   ![Q2.2.png](figures/Q2.2.png)
   - **Notable Differences**:
-    - Even movies with low IMDb ratings (3-4) sometimes receive high user scores (8-10)
-    - Conversely, some films with high IMDb ratings (8-9) receive very low user scores (2-4)
-- **Conclusion**: While there's some positive correlation between user and IMDb ratings, the relationship is weak. The data suggests highly independent rating behavior, with user ratings often diverging significantly from IMDb ratings.
+    - Even movies with low IMDb ratings (3-4) sometimes I rate them with high scores (8-10)
+    - Conversely, some films with high IMDb ratings (8-9) receive very low scores by me(2-4)
+- **Conclusion**: While there's some positive correlation between IMDb ratings and that of mine, the relationship is weak. The data suggests highly independent rating behavior, with my ratings often diverging significantly from IMDb ratings.
 
 ### 3. Favorite Directors and Actors
 - **Observation**: The data shows a mix of international and Turkish figures among the most-watched directors and actors.
@@ -137,6 +137,7 @@ Through this analysis, I discovered the following about my viewing habits. Where
 - There is significant engagement with both mainstream Hollywood productions and Turkish cinema.
 - The frequency distribution is relatively tight, ranging from 2-5 movies per person.
 - Contemporary actors and directors dominate the viewing preferences.
+- Yet my watchin frequencies does not necessarily show that I like those actors and directors.
 
 ### 4. Common Properties of Ratings and Correlations
 - **Observation**: The data reveals interesting patterns across ratings, years, and runtimes.
