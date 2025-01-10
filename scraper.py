@@ -7,7 +7,7 @@ def read_imdb_csv(file_path):
         df = pd.read_csv(file_path)
         # Rename columns to match the original format if necessary
         df.rename(columns={
-            'Const': 'imdb_id',  # Ensure this matches the IMDb ID column in your CSV
+            'Const': 'imdb_id', 
             'Your Rating': 'user_rating',
             'Title': 'title'
         }, inplace=True)
