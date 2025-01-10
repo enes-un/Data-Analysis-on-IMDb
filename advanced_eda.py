@@ -1,7 +1,7 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from scipy.stats import pearsonr, chi2_contingency
+from scipy.stats import pearsonr
 
 def eda_and_analysis(df):
     # Research Question 1: Most-Watched vs Favorite Genres

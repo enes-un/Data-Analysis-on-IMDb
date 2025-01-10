@@ -1,4 +1,3 @@
-
 from scraper import read_imdb_csv
 from fetcher import fetch_metadata
 from cleaner import clean_data
@@ -14,7 +13,6 @@ def main():
         print("Reading IMDb ratings from CSV...")
         ratings_df = read_imdb_csv(file_path)
         print("CSV reading completed.")
-        print(ratings_df.head())
 
         # Step 2: Fetch metadata using IMDbPY
         print("Fetching metadata from IMDb...")

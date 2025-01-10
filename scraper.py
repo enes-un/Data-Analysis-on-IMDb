@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 import pandas as pd
 
-# Replace scraping function with CSV reading
 def read_imdb_csv(file_path):
     try:
         # Read the IMDb CSV file
